@@ -1,6 +1,4 @@
   - name: "show ip ospf {{ process_id }} rib"
-    vars:
-      ansible_network_os: ios
     ios_command:
       commands:
         - show ip ospf {{ process_id }} rib
