@@ -1,2 +1,2 @@
-- import_playbook: ../site1/main.yaml
-- import_playbook: ../site2/main.yaml
+- include: ../site1/main.yaml
+- include: ../site2/main.yaml

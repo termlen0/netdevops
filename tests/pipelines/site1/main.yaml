@@ -5,3 +5,4 @@
   roles:
     - do_policy
     - ios_ospfv2
+    - ios_bgp
