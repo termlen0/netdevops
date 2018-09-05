@@ -1,6 +1,0 @@
-  - name: "show ip ospf 110 rib"
-    ios_command:
-      commands:
-        - show ip ospf 110 rib
-    register: show_ip_ospf_110_rib
-    when: ospfv2.110 is defined

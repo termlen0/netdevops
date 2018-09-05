@@ -1,10 +1,10 @@
 site: 1
 snmp:
   ro:
-    - site1-snmpro
-    - ansible123
+    - Site1-Snmpro
+    - Ansible123
   rw:
-    - site1-ansibleFest2018
+    - site1-AnsibleFest2018
   contact:
     - site1-netops
 

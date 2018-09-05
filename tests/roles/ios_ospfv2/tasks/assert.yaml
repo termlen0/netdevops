@@ -1,7 +1,0 @@
-- name: "assert show_ip_ospf_110_rib"
-  assert:
-    that:
-      -  show_ip_ospf_110_rib.stdout in item.network
-      -  show_ip_ospf_110_rib.stdout in item.type
-  loop: "{{ ospfv2.110.areas }}"
-  when: ospfv2.110.areas is defined

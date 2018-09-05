@@ -1,6 +1,6 @@
 #!/usr/bin/env ansible-playbook
 - name: "Trigger the tests"
-  hosts: all
+  hosts: localhost
   connection: local
   gather_facts: no
   become: no
@@ -9,7 +9,3 @@
     - name: "do_baseline"
       include_role:
         name: do_baseline
-
-    - name: "do_policy"
-      include_role:
-        name: do_policy

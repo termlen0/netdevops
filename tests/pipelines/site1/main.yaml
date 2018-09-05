@@ -2,7 +2,7 @@
   hosts: site1
   connection: network_cli
   gather_facts: no
-  tasks:
-    - name: "ios_ospfv2"
-      include_role:
-        name: ios_ospfv2
+  roles:
+    - do_policy
+    - ios_ospfv2
+    - ios_bgp

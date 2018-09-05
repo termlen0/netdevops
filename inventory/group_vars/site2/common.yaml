@@ -1,8 +1,8 @@
 site: 2
 snmp:
   ro:
-    - site2-snmpro
-    - ansible123
+    - Site2-snmpro
+    - Ansible-123
   rw:
     - site2-ansibleFest2018
   contact:

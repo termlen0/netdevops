@@ -1,2 +1,2 @@
-- import_playbook: test.yaml
-- import_playbook: "pipelines/{{ pipeline | default('full') }}/main.yaml"
+- include: test.yaml
+- include: pipeline.yaml

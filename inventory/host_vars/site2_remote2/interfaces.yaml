@@ -1,7 +1,7 @@
 loopback:
   0:
     desc: INTERNAL INTERFACE LOOPBACK0
-    net: 10.1.22.0/24
+    net: "{{ circuit.6.network }}"
   1:
     desc: INTERNAL INTERFACE LOOPBACK1
-    net: 192.168.22.0/24
+    net: "{{ circuit.7.network }}"

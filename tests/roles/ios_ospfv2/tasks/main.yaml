@@ -1,2 +1,2 @@
 - import_tasks: run.yaml
-  when: ospfv2 is defined
+  when: process_id is defined

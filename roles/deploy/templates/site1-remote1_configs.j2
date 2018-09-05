@@ -11,4 +11,5 @@ router ospf {{process_id}}
 interface Loopback{{ intf_id }}
  description {{ properties.desc }}
  ip address {{ properties.net | ipaddr('network') }} {{ properties.net | ipaddr('netmask') }}
+ ip ospf network point-to-point
 {% endfor %}
