@@ -25,7 +25,7 @@ script:
 
   - |
     ansible-playbook provisioner/provision.yaml \
-    -e env="${TRAVIS_BRANCH}
+    -e env="${TRAVIS_BRANCH}" \
     -e chg_num="${TRAVIS_PULL_REQUEST_BRANCH}" \
     -e user_id="${TRAVIS_PULL_REQUEST}" \
     --vault-id provisioner/vault.sh
