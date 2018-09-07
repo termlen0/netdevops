@@ -1,0 +1,12 @@
+all:
+  hosts:
+    localhost:
+
+  children:
+    site1:
+      children:
+        tag_location_site1:
+
+    site2:
+      children:
+        tag_location_site2:

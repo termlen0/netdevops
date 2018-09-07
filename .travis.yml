@@ -21,6 +21,19 @@ install:
 
 before_script: cd tests
 script:
+  - git clone https://github.com/termlen0/demo provisioner
+
+  - |
+    ansible-playbook provisioner/provision.yaml \
+    -e env="${TRAVIS_BRANCH}
+    -e chg_num="${TRAVIS_PULL_REQUEST_BRANCH}" \
+    -e user_id="${TRAVIS_PULL_REQUEST}" \
+    --vault-id provisioner/vault.sh
+
+  - sed -i -e "s/DEMO-PROD/${TRAVIS_PULL_REQUEST_BRANCH}\-${TRAVIS_PULL_REQUEST}/" test-inventory/ec2.ini
+
+  - ansible-playbook -i test-inventory ../deploy.yaml
+
   - |
     ansible-playbook -i inventory main.yaml \
       -e env="${TRAVIS_BRANCH}" \
