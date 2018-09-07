@@ -27,8 +27,7 @@ script:
     ansible-playbook provisioner/provision.yaml \
     -e env="${TRAVIS_BRANCH}" \
     -e chg_num="${TRAVIS_PULL_REQUEST_BRANCH}" \
-    -e user_id="${TRAVIS_PULL_REQUEST}" \
-    --vault-id provisioner/vault.sh
+    -e user_id="${TRAVIS_PULL_REQUEST}"
 
   - sed -i -e "s/DEMO-PROD/${TRAVIS_PULL_REQUEST_BRANCH}\-${TRAVIS_PULL_REQUEST}/" test-inventory/ec2.ini
 
