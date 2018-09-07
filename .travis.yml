@@ -30,6 +30,11 @@ script:
     -e user_id="${TRAVIS_PULL_REQUEST}"
 
   - sed -i -e "s/DEMO-PROD/${TRAVIS_PULL_REQUEST_BRANCH}\-${TRAVIS_PULL_REQUEST}/" test-inventory/ec2.ini
+  - sed -i -e "s/DEMO-PROD/${TRAVIS_PULL_REQUEST_BRANCH}\-${TRAVIS_PULL_REQUEST}/g" test-inventory/hosts.yaml
+  - sed -i -e "s/DEMO_PROD/${TRAVIS_PULL_REQUEST_BRANCH}_${TRAVIS_PULL_REQUEST}/g" test-inventory/hosts.yaml
+  - sed -i -e "s/demo_prod/${TRAVIS_PULL_REQUEST_BRANCH}_${TRAVIS_PULL_REQUEST}/g" test-inventory/hosts.yaml
+
+
 
   - ansible-playbook -i test-inventory ../deploy.yaml
 
