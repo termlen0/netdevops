@@ -19,12 +19,14 @@ install:
   # Install requirements
   - pip install -r requirements.txt
 
-before_script: cd tests
+before_script:
+  - cd tests
+  - echo `which python`
 script:
   - git clone https://github.com/termlen0/demo provisioner
 
   - |
-    ansible-playbook provisioner/provision.yaml \
+    ansible-playbook -vvvv  provisioner/provision.yaml \
     -e env="${TRAVIS_BRANCH}" \
     -e chg_num="${TRAVIS_PULL_REQUEST_BRANCH}" \
     -e user_id="${TRAVIS_PULL_REQUEST}"
