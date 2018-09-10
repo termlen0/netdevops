@@ -50,5 +50,13 @@ script:
       -e user_id="${TRAVIS_PULL_REQUEST}" \
       -e pipeline="${TRAVIS_BRANCH}"
 
+after_script:
+  - |
+    ansible-playbook  provisioner/teardown.yaml \
+    -e env="${TRAVIS_BRANCH}" \
+    -e chg_num="${TRAVIS_PULL_REQUEST_BRANCH}" \
+    -e user_id="${TRAVIS_PULL_REQUEST}"
+
+
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
