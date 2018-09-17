@@ -30,7 +30,7 @@ script:
   - git clone https://github.com/termlen0/demo provisioner
 
   - |
-    ansible-playbook  provisioner/provision.yaml \
+    ansible-playbook -vvvvv provisioner/provision.yaml \
     -e env="${TRAVIS_BRANCH}" \
     -e chg_num="${TRAVIS_PULL_REQUEST_BRANCH}" \
     -e user_id="${TRAVIS_PULL_REQUEST}"
