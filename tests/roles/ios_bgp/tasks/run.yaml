@@ -24,3 +24,4 @@
   loop_control:
     loop_var: network
     label: "network {{ network.1.net }}"
+  when: 'pipeline == "full"'
