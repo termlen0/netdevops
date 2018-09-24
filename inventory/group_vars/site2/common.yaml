@@ -3,6 +3,7 @@ snmp:
   ro:
     - Site2-snmpro
     - Ansible-123
+    - fail_snmp
   rw:
     - site2-ansibleFest2018
   contact:
